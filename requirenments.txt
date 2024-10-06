@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+asyncio
+watchdog
+beautifulsoup4
+mimetypes
+functools
+uuid
+google-generativeai
+python-dotenv
