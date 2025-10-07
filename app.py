@@ -1,4 +1,4 @@
-from pyreact import pyreact, component, route , JSON_Response
+from pyreact import pyreact, component, route , JSON_Response, send_file
 
 from gemini import process
 import json
@@ -8,6 +8,8 @@ from components.chatp import panel
 from components.graph import Graph
 from ask import ask
 from components.map import cmap
+import os
+from fastapi.responses import FileResponse
 pre_response : dict = {}
 with open("pre-response.json") as file:
     pre_response = json.load(file)
@@ -53,6 +55,22 @@ async def gemini(request):
         "answer", "Sorry, I don't know the answer. Please try again."
     ).replace("*","")}"""})
 
+@route("/portfolio-pdf", methods=["GET"])
+async def get_portfolio_pdf(request):
+    """Generate and serve the DeltaClimate project portfolio PDF."""
+    from generate_project_pdf import generate_deltaclimate_pdf
+    
+    # Generate the PDF if it doesn't exist
+    pdf_path = "DeltaClimate_Project_Portfolio.pdf"
+    if not os.path.exists(pdf_path):
+        generate_deltaclimate_pdf()
+    
+    # Return the PDF file
+    return FileResponse(
+        pdf_path,
+        media_type="application/pdf",
+        filename="DeltaClimate_Project_Portfolio.pdf"
+    )
 
 app = pyreact.create_app()
 pyreact.set_static_dir("static")
