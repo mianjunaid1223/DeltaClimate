@@ -14,6 +14,7 @@ Delta Climate leverages the power of PyReact framework to deliver an intuitive i
 - **Question & Answer System**: Ask specific questions about climate data and get AI-powered answers
 - **Responsive Dark Theme UI**: Modern, user-friendly interface built with DaisyUI and Tailwind CSS
 - **Real-time Data Processing**: Access to comprehensive CO2 emissions data from 1960-2018 and supply chain GHG emission factors
+- **Project Portfolio PDF**: Generate a comprehensive PDF document showcasing the project's features, architecture, and technical accomplishments
 
 ## Technology Stack
 
@@ -72,6 +73,27 @@ http://127.0.0.1:3000
    - Ask specific questions about climate data using the interactive panel
    - Explore CO2 emissions trends through interactive graphs
 
+### Generate Project Portfolio PDF
+
+To generate a PDF document showcasing the project:
+
+**Option 1: Run the generation script directly**
+```bash
+python generate_project_pdf.py
+```
+
+**Option 2: Access via the web interface**
+```
+http://127.0.0.1:3000/portfolio-pdf
+```
+
+This will generate and download a comprehensive PDF document (`DeltaClimate_Project_Portfolio.pdf`) containing:
+- Executive summary
+- Project overview and features
+- Technology stack and architecture details
+- API documentation
+- Technical achievements and design decisions
+
 ## Project Structure
 
 ```
@@ -101,6 +123,7 @@ DeltaClimate/
 - `GET /` - Home page with pre-loaded climate data and visualizations
 - `POST /gemini` - Generate climate change stories for specific countries and timelines
 - `POST /ask` - Ask questions about climate data and get AI-powered answers
+- `GET /portfolio-pdf` - Download the DeltaClimate project portfolio PDF document
 
 ## About PyReact Framework
 

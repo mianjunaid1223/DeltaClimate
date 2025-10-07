@@ -8,3 +8,4 @@ functools
 uuid
 google-generativeai
 python-dotenv
+reportlab
