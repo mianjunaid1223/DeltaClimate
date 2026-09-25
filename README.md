@@ -1,5 +1,8 @@
 # DeltaClimate: Environmental Data Analytics Platform
 
+[![Year Built](https://img.shields.io/badge/Year%20Built-2024-blue.svg)](#)
+
+
 Full-stack climate data exploration and greenhouse gas economic modeling platform built with PyReact, FastAPI, Gemini 1.5 Flash, and ReportLab.
 
 ```
@@ -51,6 +54,7 @@ DeltaClimate is an open-source environmental data intelligence application combi
 
 | Parameter | Specification |
 |---|---|
+| Year Built | 2024 |
 | Frontend Framework | PyReact (Python-based component model) |
 | Backend Server | FastAPI with ASGI Uvicorn workers |
 | Datasets | Global CO2 (1960-2018), US EPA Supply Chain GHG Factors v1.2 |
